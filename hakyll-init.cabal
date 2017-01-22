@@ -1,9 +1,9 @@
 Name:    hakyll-init
 Version: 0.0.1.0
 
-Synopsis: A command line tool that initializes hakyll projects
+Synopsis: A command line tool that generates a hakyll sample blog
 Description:
-  For a short tutorial on creating an example site with hakyll-init, see
+  For a short tutorial on creating a sample blog with hakyll-init, see
 
   .
 
