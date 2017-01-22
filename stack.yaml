@@ -1,7 +1,3 @@
-resolver: nightly-2016-10-31
-extra-package-dbs: []
-extra-deps:
-  - 'QuickCheck-2.9.2'
-
+resolver: lts-7.16
 packages:
   - '.'
