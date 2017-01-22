@@ -1,0 +1,68 @@
+Name:    hakyll-init
+Version: 0.0.1.0
+
+Synopsis: A command line tool that initializes hakyll projects
+Description:
+  For a short tutorial on creating an example site with hakyll-init, see
+
+  .
+
+  * <https://jaspervdj.be/hakyll/tutorials/01-installation.html>
+
+  .
+
+  If you seek assistance, there's:
+
+  .
+
+  * A google group: <http://groups.google.com/group/hakyll>
+
+  .
+
+  * An IRC channel, @#hakyll@ on freenode
+
+Author:       Jasper Van der Jeugt <m@jaspervdj.be>
+Maintainer:   Jasper Van der Jeugt <m@jaspervdj.be>
+Homepage:     http://jaspervdj.be/hakyll
+Bug-Reports:  http://github.com/jaspervdj/hakyll-init/issues
+License:      BSD3
+License-File: LICENSE
+Category:     Web
+
+Cabal-Version: >= 1.8
+Build-Type:    Simple
+Data-Dir:      data
+
+Data-files:
+  example/posts/2015-11-28-carpe-diem.markdown
+  example/posts/2015-10-07-rosa-rosa-rosam.markdown
+  example/posts/2015-12-07-tu-quoque.markdown
+  example/posts/2015-08-12-spqr.markdown
+  example/site.hs
+  example/images/haskell-logo.png
+  example/templates/post-list.html
+  example/templates/default.html
+  example/templates/archive.html
+  example/templates/post.html
+  example/css/default.css
+  example/index.html
+  example/about.rst
+  example/contact.markdown
+
+Source-Repository head
+  Type:     git
+  Location: git://github.com/jaspervdj/hakyll-init.git
+
+Executable hakyll-init
+  Ghc-options:    -Wall
+  Hs-source-dirs: src
+  Main-is:        Hakyll/Init.hs
+
+  Build-depends:
+    base      >= 4   && < 5,
+    directory >= 1.0 && < 1.3,
+    filepath  >= 1.0 && < 1.5
+
+  Other-modules:
+    Hakyll.Core.Util.File
+    Paths_hakyll_init
