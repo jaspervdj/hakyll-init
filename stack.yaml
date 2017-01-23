@@ -1,3 +1,4 @@
 resolver: lts-7.16
 packages:
   - '.'
+install-ghc: true
