@@ -1,20 +1,21 @@
-language: haskell
-ghc: '7.10'
-branches:
-  only:
-    - master
+sudo: false
+language: c  # Choose a lightweight base image
+
 cache:
   directories:
   - $HOME/.stack
+
+addons:
+  apt:
+    packages:
+    - libgmp-dev
+
 before_install:
-  - echo "override before_install"
-install:
-  - wget https://github.com/commercialhaskell/stack/releases/download/v1.0.0/stack-1.0.0-linux-x86_64.tar.gz -O stack.gz
-  - tar xvf stack.gz
-  - chmod +x stack-1.0.0-linux-x86_64/stack
-  - stack-1.0.0-linux-x86_64/stack setup
-  - stack-1.0.0-linux-x86_64/stack build
-before_script:
-  - echo "override before_script"
+- mkdir -p ~/.local/bin
+- export PATH=$HOME/.local/bin:$PATH
+- travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
+
 script:
-  - stack-1.0.0-linux-x86_64/stack test
+- stack build --copy-bins
+- stack --no-terminal test
+- bash scripts/test.sh
